@@ -1,0 +1,38 @@
+#include<stdio.h>
+#define max 30
+int main()
+{
+    int i,j,n = 0,bt[max],wt[max], tat[max],at[max], temp[max];
+    float awt =0 ,atat = 0;
+    printf("enter number of processes");
+    scanf("%d",&n);
+    printf("Etner arrival time of the processes");
+    for(i = 0; i<n; i++)
+    {
+    scanf("%d", &at[i]);
+    }
+    printf("enter birst time of the process");
+    for (j=0;j<n;j++)
+    {
+        scanf("%d",&bt[j]);
+     
+     }
+     temp[0] = 0;
+     printf("process \t\t arrival time \t\t burst time \t\t waiting time \t\t TAT ");
+     for(i=0; i<n;i++)
+     {
+        wt[i]= 0;
+        tat[i] = 0;
+        temp[i+1]= temp[i]+bt[i];
+        wt[i]=temp[i]-at[i];
+        tat[i] = bt[i]+at[i];
+        awt = awt+wt[i];
+        atat = atat + tat[i];
+        printf("%d \t\t %d \t\t %d \t\t %d \t\t %d \n", i+1, at[i], bt[i],wt[i],tat[i]);
+         
+     }
+     awt = awt/n;
+     printf("avr waiting time = %f", awt);
+     return 0;
+    
+}
