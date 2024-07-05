@@ -24,7 +24,7 @@ int main()
         wt[i]= 0;
         tat[i] = 0;
         temp[i+1]= temp[i]+bt[i];
-        wt[i]=temp[i]-at[i];
+        wt[i]=temp[i+1]-at[i];
         tat[i] = bt[i]+at[i];
         awt = awt+wt[i];
         atat = atat + tat[i];
